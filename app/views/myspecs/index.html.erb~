@@ -1,0 +1,23 @@
+<h1>Listing myspecs for project Revere</h1>
+<%= link_to 'New Myspec', new_myspec_path %>
+<br />
+<hr />
+
+<% @myspecs.each do |myspec| %>
+
+<table border="1" bgcolor="#D8D8D8">
+<thead>
+<tr>
+<th width="450pt" align="left"><%= link_to myspec.title, myspec %, {:style => "color:#0000FF;"}></th>
+<th width="50pt"><%= myspec.status %></th>
+<th width="150pt" align="right"><%= link_to 'Destroy', myspec, method: :delete, data: { confirm: 'Are you sure?' } %></th>
+</tr>
+</thead>
+</table>
+
+
+<% end %>
+
+
+
+

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @myspec.title %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @myspec.status %>
+</p>
+
+<p>
+  <b>Commit:</b>
+  <%= @myspec.commit %>
+</p>
+<hr />
+<p>
+  <b>Function:</b><br />
+  <%= simple_format @myspec.function %>
+</p>
+<hr />
+<p>
+  <b>Cucumber:</b><br />
+  <%= simple format @myspec.cucumber %>
+</p>
+<hr />
+
+<%= link_to 'Edit', edit_myspec_path(@myspec) %> |
+<%= link_to 'Back', myspecs_path %>

@@ -1,0 +1,42 @@
+<%= form_for(@myspec) do |f| %>
+  <% if @myspec.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@myspec.errors.count, "error") %> prohibited this myspec from being saved:</h2>
+
+      <ul>
+      <% @myspec.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  
+    <div class="field">
+    <%= f.label :commit %><br />
+    <%= f.text_field :commit %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :status %><br />
+    <%= f.select(:status, [["To be defined", "4"], ["In progress", "3"], ["Succesfully finished", "2"], ["finished + BDD testing", "1"]] ) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :function %><br />
+    <%= f.text_area :function %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cucumber %><br />
+    <%= f.text_area :cucumber %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

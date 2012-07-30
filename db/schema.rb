@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120722023952) do
+ActiveRecord::Schema.define(:version => 20120730121706) do
 
   create_table "myspecs", :force => true do |t|
     t.string   "title"
@@ -19,8 +19,20 @@ ActiveRecord::Schema.define(:version => 20120722023952) do
     t.text     "cucumber"
     t.string   "commit"
     t.string   "status"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.text     "styling"
+    t.string   "styling_status"
+    t.text     "coffee"
+    t.string   "coffee_status"
+    t.text     "hypertext"
+    t.string   "hypertext_status"
+    t.text     "testing"
+    t.string   "testing_status"
+    t.string   "cucumber_status"
+    t.string   "rating"
+    t.string   "core"
+    t.string   "overall_status"
   end
 
 end

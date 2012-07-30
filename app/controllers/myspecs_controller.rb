@@ -2,7 +2,7 @@ class MyspecsController < ApplicationController
   # GET /myspecs
   # GET /myspecs.json
   def index
-    @myspecs = Myspec.find(:all, :order => 'status')  
+    @myspecs = Myspec.find(:all, :order => 'core DESC, overall_status, title')  
 
     respond_to do |format|
       format.html # index.html.erb
@@ -79,5 +79,50 @@ class MyspecsController < ApplicationController
       format.html { redirect_to myspecs_url }
       format.json { head :no_content }
     end
+  end
+
+  def coding
+    @myspecs = Myspec.find(:all, :order => 'status')  
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @myspecs }
+    end   
+  end
+
+  def stylingcss
+    @myspecs = Myspec.find(:all, :order => 'status')  
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @myspecs }
+    end   
+  end
+
+  def stylinghtml
+    @myspecs = Myspec.find(:all, :order => 'status')  
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @myspecs }
+    end   
+  end
+
+  def userfriendly
+    @myspecs = Myspec.find(:all, :order => 'status')  
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @myspecs }
+    end   
+  end
+
+  def cucumber
+    @myspecs = Myspec.find(:all, :order => 'status')  
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @myspecs }
+    end   
   end
 end

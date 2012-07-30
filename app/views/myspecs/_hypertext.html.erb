@@ -1,0 +1,11 @@
+<div class="field">
+  <%= f.label :hypertext_status, "HTML Status?" %><br />
+  <%= f.select(:hypertext_status, ["To be defined", "In progress", "Almost finished", "Finished"]) %>
+</div>
+
+<div class="field">
+  <%= f.label :hypertext, "HTML goes here" %><br />
+  <%= f.text_area :hypertext, :class => "textarea" %>
+</div>
+
+

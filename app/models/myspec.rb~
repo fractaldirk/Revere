@@ -1,5 +1,5 @@
 class Myspec < ActiveRecord::Base
   attr_accessible :commit, :cucumber, :function, :status, :title, :styling, :styling_status, 
                   :coffee, :coffee_status, :hypertext, :hypertext_status, :cucumber_status, :rating, 
-                  :testing_status, :testing, :core, :overall_status
+                  :testing_status, :testing, :core
 end

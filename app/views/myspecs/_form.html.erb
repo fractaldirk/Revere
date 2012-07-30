@@ -1,3 +1,4 @@
+<h1>Soar on wings like eagles</h1>
 <%= form_for(@myspec) do |f| %>
   <% if @myspec.errors.any? %>
     <div id="error_explanation">
@@ -11,32 +12,68 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  
+
+<ul class="nav nav-tabs" id="myTab">
+  <li class="active"><a href="#home" data-toggle="tab">Functions</a></li>
+  <li><a href="#code" data-toggle="tab">Code</a></li>
+  <li><a href="#styling" data-toggle="tab">CSS</a></li>
+  <li><a href="#java" data-toggle="tab">Javascript</a></li>
+  <li><a href="#hypertext" data-toggle="tab">HTML</a></li>
+  <li><a href="#testing" data-toggle="tab">Cucumber</a></li>
+</ul>
+ 
+<div class="tab-content">
+  <div class="tab-pane active" id="home">
+   <div class="field">
+     <%= f.label :title %><br />
+     <%= f.text_field :title %>
+   </div>
+
     <div class="field">
-    <%= f.label :commit %><br />
-    <%= f.text_field :commit %>
+     <%= f.label :core, "Core function?" %><br />
+     <%= f.select(:core, ["No", "Yes"]) %>
+   </div>
+  
+   <div class="field">
+     <%= f.label :commit %><br />
+     <%= f.text_field :commit %>
+   </div>
+  
+   <div class="field">
+     <%= f.label :overall_status, "Overall status of the feature" %><br />
+     <%= f.select(:overall_status, ["To be defined", "In progress", "Halfway", "finished"] ) %>
+   </div>
+
+   <div class="field">
+     <%= f.label :rating, "Overall rating, satisfied?" %><br />
+     <%= f.select(:status, ["0","1", "2", "3", "4", "5", "6", "7", "8", "9", "10"] ) %>
+   </div>
+
+   <div class="field">
+     <%= f.label :function, "Short function description" %><br />
+     <%= f.text_area :function, :class => "textarea" %>
+   </div>
   </div>
   
-  <div class="field">
-    <%= f.label :status %><br />
-    <%= f.select(:status, [["To be defined", "4"], ["In progress", "3"], ["Succesfully finished", "2"], ["finished + BDD testing", "1"]] ) %>
+  <div class="tab-pane" id="code">
+    <%= render :partial => 'code', :locals => { :f => f } %>
   </div>
-
-  <div class="field">
-    <%= f.label :function %><br />
-    <%= f.text_area :function %>
+  <div class="tab-pane" id="styling">
+    <%= render :partial => 'styling', :locals => { :f => f } %>
   </div>
-
-  <div class="field">
-    <%= f.label :cucumber %><br />
-    <%= f.text_area :cucumber %>
+  <div class="tab-pane" id="java">
+    <%= render :partial => 'java', :locals => { :f => f } %>
   </div>
+  <div class="tab-pane" id="hypertext">
+    <%= render :partial => 'hypertext', :locals => { :f => f } %>
+  </div>
+  <div class="tab-pane" id="testing">
+    <%= render :partial => 'testing', :locals => { :f => f } %>
+  </div>
+</div>
 
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+

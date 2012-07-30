@@ -3,13 +3,25 @@
 <br />
 <hr />
 
+<table border="1" bgcolor="#D8D8D8">
+<thead class="headingcolor">
+<tr>
+<th width="350pt" align="left">Listing Features</th>
+<th width="150pt" class="headingcolor">Core Functionality?</th>
+<th width="150pt">Overall Status?</th>
+<th width="150pt" align="right">Action?</th>
+</tr>
+</thead>
+</table>
+
 <% @myspecs.each do |myspec| %>
 
 <table border="1" bgcolor="#D8D8D8">
 <thead>
 <tr>
-<th width="450pt" align="left"><%= link_to myspec.title, myspec %, {:style => "color:#0000FF;"}></th>
-<th width="50pt"><%= myspec.status %></th>
+<th width="350pt" align="left"><%= link_to myspec.title, myspec, {:style => "color:#0000FF;"} %></th>
+<th width="150pt"><%= myspec.core %></th>
+<th width="150pt"><%= myspec.overall_status %></th>
 <th width="150pt" align="right"><%= link_to 'Destroy', myspec, method: :delete, data: { confirm: 'Are you sure?' } %></th>
 </tr>
 </thead>
@@ -17,6 +29,7 @@
 
 
 <% end %>
+
 
 
 

@@ -1,4 +1,10 @@
 Tracky::Application.routes.draw do
+  
+  get 'myspecs/coding'
+  get 'myspecs/stylingcss'
+  get 'myspecs/stylinghtml'
+  get 'myspecs/userfriendly'
+  get 'myspecs/cucumber'
   resources :myspecs
 
   # The priority is based upon order of creation:

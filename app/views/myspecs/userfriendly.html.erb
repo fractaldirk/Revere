@@ -1,0 +1,29 @@
+<h1>They say good things take time.</h1>
+<%= link_to 'New Myspec', new_myspec_path %>
+<br />
+<hr />
+
+<table border="1" bgcolor="#D8D8D8">
+<thead class="headingcolor">
+<tr>
+<th width="450pt" align="left">Feature</th>
+<th width="150pt">Core Functionality?</th>
+<th width="150pt">JavaScript/coffeeScript?</th>
+</tr>
+</thead>
+</table>
+
+<% @myspecs.each do |myspec| %>
+<table border="1" bgcolor="#D8D8D8">
+<thead>
+<tr>
+<th width="450pt" align="left"><%= link_to myspec.title, myspec, {:style => "color:#0000FF;"} %></th>
+<th width="150pt"><%= myspec.core %></th>
+<th width="150pt"><%= myspec.coffee_status %></th>
+</tr>
+</thead>
+</table>
+
+
+<% end %>
+

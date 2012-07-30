@@ -1,0 +1,11 @@
+<div class="field">
+  <%= f.label :testing_status, "Ruby programming done?" %><br />
+  <%= f.select(:testing_status, ["To be defined", "In progress", "Almost finished", "Finished"]) %>
+</div>
+
+<div class="field">
+  <%= f.label :testing, "Ruby code" %><br />
+  <%= f.text_area :testing, :class => "textarea" %>
+</div>
+
+

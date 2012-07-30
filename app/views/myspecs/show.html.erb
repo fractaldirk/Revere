@@ -1,29 +1,75 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <b>Title:</b>
-  <%= @myspec.title %>
-</p>
-
-<p>
-  <b>Status:</b>
-  <%= @myspec.status %>
-</p>
-
-<p>
-  <b>Commit:</b>
-  <%= @myspec.commit %>
-</p>
+<center><h2><%= @myspec.title %></h2></center>
+<%= link_to 'Edit', edit_myspec_path(@myspec) %> |
+<%= link_to 'Back', myspecs_path %>
 <hr />
-<p>
-  <b>Function:</b><br />
-  <%= simple_format @myspec.function %>
-</p>
+<div class="row-fluid">
+  <div class="span6">
+   <p>
+     <b>Feature status: <%= @myspec.overall_status %></b>
+   </p>
+
+   <p>
+     <b>Core function?: <%= @myspec.core %></b>
+   </p>
+   
+   <p>
+     <b>Commit: <%= @myspec.commit %></b>
+   </p>
+   <p>
+     <b>Overall rating: <%= @myspec.rating %></b>
+   </p>
+   <p>
+     <b>Short functional summary:</b><br />
+     <%= simple_format @myspec.function %>
+   </p>
 <hr />
-<p>
-  <b>Cucumber:</b><br />
-  <%= simple_format @myspec.cucumber %>
-</p>
+   <p>
+     <b>Ruby code done?: <%= @myspec.testing_status %></b>
+   </p>
+   <p>
+     <b>Ruby code:</b><br />
+     <%= simple_format @myspec.testing %>
+   </p>
+<hr />
+   <p>
+     <b>Cucumber testing specs done?: <%= @myspec.cucumber_status %></b>
+   </p>
+   <p>
+     <b>Cucumber specs:</b><br />
+     <%= simple_format @myspec.cucumber, :class => 'cucumber' %>
+   </p>
+<hr />
+  </div>
+
+
+  <div class="span6">
+   <p>
+     <b>CSS styling done?: <%= @myspec.styling_status %></b>
+   </p>
+   <p>
+     <b>CSS stylesheet:</b><br />
+     <%= simple_format @myspec.styling %>
+   </p>
+<hr />
+   <p>
+     <b>JavaScript (or coffeeScript) done?: <%= @myspec.coffee_status %></b>
+   </p>
+   <p>
+     <b>Javascript/coffeeScript code:</b><br />
+     <%= simple_format @myspec.coffee %>
+   </p>
+<hr />
+   <p>
+     <b>HTML codation done?: <%= @myspec.hypertext_status %></b>
+   </p>
+   <p>
+     <b>(X)html code:</b><br />
+     <%= simple_format @myspec.hypertext %>
+   </p>
+<hr />
+  </div>
+</div>
 <hr />
 
 <%= link_to 'Edit', edit_myspec_path(@myspec) %> |

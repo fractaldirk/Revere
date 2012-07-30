@@ -1,0 +1,11 @@
+<div class="field">
+  <%= f.label :cucumber_status, "HTML Status?" %><br />
+  <%= f.select(:cucumber_status, ["To be defined", "In progress", "Almost finished", "Finished"]) %>
+</div>
+
+<div class="field">
+  <%= f.label :cucumber, "HTML goes here" %><br />
+  <%= f.text_area :cucumber, :class => "textarea" %>
+</div>
+
+
